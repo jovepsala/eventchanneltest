@@ -1,0 +1,32 @@
+{
+  "provides_services": [
+    {
+      "service_name": "spaceify.org/services/eventchanneltest",
+      "service_type": "open"
+    }
+  ],
+  "requires_services": [
+    {
+      "service_name": "spaceify.org/services/eventchannel",
+      "suggested_application": "spaceify/eventchannel"
+    }
+  ],
+  "name": "Spaceify Event Channel Test",
+  "unique_name": "spaceify/eventchanneltest",
+  "version": "0.1.0",
+  "type": "sandboxed",
+  "category": "core",
+  "start_command": "node eventchanneltest.js",
+  "implements": [
+    "WEB_SERVER"
+  ],
+  "developer": {
+    "name": "Spaceify Oy",
+    "email": "admin@spaceify.net",
+    "url": "http://spaceify.net"
+  },
+  "short_description": "Test the EventChannel.",
+  "appstore_description": "The Event Channel tester.",
+  "license": "MIT",
+  "creation_date": "2016-10-19 16:00:00"
+}
