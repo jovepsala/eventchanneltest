@@ -5,7 +5,7 @@
  * @class EventChannel
  */
 
-var spaceify = require("/api/spaceifyapplication.js");
+var spaceify = require("/var/lib/spaceify/code/spaceifyapplication.js");
 
 function EventChannel()
 {
