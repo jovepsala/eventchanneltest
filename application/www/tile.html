@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=100%, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link href="tile.css" rel="stylesheet" type="text/css" media="screen">
+
+	<!-- Get Spaceify's classes and jQuery. Wait for spaceifyReady event! -->
+	<script src="http://edge.spaceify.net/libs/spaceifyinitialize.js?jquery"></script>
+
+	<title></title>
+
+	<script>
+		var spaceify = null;
+		var eventchannel = null;
+
+			// CONNECTION TO THE APPLICATION -- -- -- -- -- -- -- -- -- -- //
+		window.addEventListener("spaceifyReady", function()
+			{
+			spaceify = new SpaceifyApplication();
+			spaceify.start(this, "spaceify/eventchannel");
+			});
+
+		this.start = function()
+			{
+			eventchannel = spaceify.getRequiredService("spaceify.org/services/eventchannel");
+			}
+
+		this.fail = function()
+			{}
+
+		function redClick()
+			{
+			eventchannel.callRpc("generateEvent", [{name: "red", color: parseInt(Math.random() * 255)}]);
+			}
+
+		function greenClick()
+			{
+			eventchannel.callRpc("generateEvent", [{name: "green", color: parseInt(Math.random() * 255)}]);
+			}
+
+		function blueClick()
+			{
+			eventchannel.callRpc("generateEvent", [{name: "blue", color: parseInt(Math.random() * 255)}]);
+			}
+	
+	</script>
+</head>
+
+<body>
+
+	<button onclick="redClick();">RED</button>
+	<button onclick="greenClick();">GREEN</button>
+	<button onclick="blueClick();">BLUE</button>
+
+	<p>
+	eventchanneltest
+
+</body>
+
+</html>
